@@ -19,7 +19,11 @@
             {% if things.completed %}
                 <tr class="table-secondary">
                     <td class="striker">{{ things.item }}</td>
-                    <td><center>{{ things.completed }}</center></td>
+                    <td><center><!-- Default checked -->
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                            <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                        </div></center></td>
                     <td><center><a href = "{% url 'delete' things.id %}">Delete</a></center></td>
                 </tr>
             {% else %}
@@ -33,3 +37,4 @@
     </table>
     {% endif %}
 {% endblock %}
+
